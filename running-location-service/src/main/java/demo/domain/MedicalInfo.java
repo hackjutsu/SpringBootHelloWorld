@@ -1,17 +1,28 @@
 package demo.domain;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Embeddable;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Embeddable
 @Data
 @RequiredArgsConstructor
 public class MedicalInfo {
 
-    private final long bfr;
+    private long bfr;
 
-    private final long fmi;
+    private long fmi;
+
+    public MedicalInfo() {
+
+    }
+
+    public MedicalInfo(long bfr, long fmi) {
+        this.bfr = bfr;
+        this.fmi = fmi;
+    }
 }
 

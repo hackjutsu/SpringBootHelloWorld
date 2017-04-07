@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 public interface LocationRepository extends JpaRepository<Location, Long> { // classname, id type
     Page<Location> findByRunnerMovementType(
             @Param("movementType") Location.RunnerMovementType movementType,
-            Pageable pagable);
+            Pageable pageable);
 }
 
